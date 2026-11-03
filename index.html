@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typing Tower Defense</title>
+<style>
+  * { box-sizing:border-box; }
+ html { scroll-behavior:smooth; }
+ body { margin: 0; font-family: Inter; line-height: 1.5; color: #CCCCCC; background: #121212; }
+ nav { position:sticky; top:0; z-index:10; background: #121212; border-bottom:1px solid #363636; display:flex; flex-wrap:wrap; gap:6px 22px; justify-content:center; padding:12px 16px; }
+ nav a { color: #bebebe; text-decoration:none; font-size:.95rem; letter-spacing:.06em; text-transform:uppercase; }
+ nav a:hover { color: #FFFFFF; text-decoration: underline; }
+ main { max-width: 900px; margin: 0 auto; padding: 0 20px 50px; }
+ section { padding-top: 50px; }
+ h1 { text-align: center; color: #ffffff; }
+ h2 { border-bottom: 1px solid #2A2A2A; padding-bottom: 6px; color: #f1f1f1; }
+ .frame { width: 100%; aspect-ratio: 16 / 9; border: 1px solid #494949; background: #000; }
+ .note { color: #a5a5a5; font-size: .9rem; }
+ .note a { color: #4f96cf; text-decoration: underline; font-weight: 600; }
+ .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+ .stack { grid-template-columns: 1fr; }
+ .card { background: #1E1E1E; border: 1px solid #2A2A2A; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+ }
+ .card h3 { margin-top: 0; color: #FFFFFF; }
+ .diagram { width: 100%; height: auto; border: 1px solid #2A2A2A; background: #1E1E1E; }
+ .list a { display: block; padding: 10px 14px; margin-bottom: 8px; background: #1E1E1E; border: 1px solid #2A2A2A; border-radius: 6px; text-decoration: none; color: #CCCCCC; }
+ .list a:hover { background: #2A2A2A; border-color: #444444; color: #FFFFFF; }
+ .team .card { text-align: center; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#play">Play</a>
+  <a href="#about">About</a>
+  <a href="#gameplay">Gameplay</a>
+  <a href="#requirements">Requirements</a>
+  <a href="#design">Design</a>
+  <a href="#team">Team</a>
+  <a href="#credit">Credit</a>
+</nav>
+
+<main>
+
+<section id="play">
+  <h1>Typing Tower Defense</h1>
+  <iframe class="frame" src="game/" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  <p class="note">Click inside the game once so it picks up your keyboard. For a bigger screen, <a href="game/" target="_blank">open it in its own tab</a>.</p>
+  <p>Hordes are coming for your tower. Your words are the only weapon you have.</p>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <p>Typing Tower Defense is an educational typing game. You are a ranged fighter standing on top of a tower while hordes of enemies march toward you. Each enemy carries a word. Type it correctly and you knock the enemy back. Let them reach the base and your tower loses health.</p>
+  <p>Early enemies need one short word. As the waves grow, enemies need more words and harder ones, including contractions. Every wave ends with a boss.</p>
+</section>
+
+<section id="gameplay">
+  <h2>Gameplay</h2>
+  <div class="grid stack">
+    <div class="card"><h3>1. Pick a difficulty</h3><p>Start the game and choose a difficulty. Each level is made of several waves of enemies</p></div>
+    <div class="card"><h3>2. Type to survive</h3><p>Enemies are fed words in order. A correct word costs the enemy health. A wrong word does nothing, so fix it or switch to another enemy</p></div>
+    <div class="card"><h3>3. Buff up</h3><p>Between waves you pick a buff for the next one</p></div>
+    <div class="card"><h3>4. Beat the boss</h3><p>Every wave ends with a boss that has to be defeated before the wave counts as cleared</p></div>
+   <div class="card"><h3>5. Unlock New Weapons</h3><p>Defeated enemies add points to your score. Browse the shop and spend on cosmetics, and check the high scores screen from the main menu</p></div>
+  </div>
+</section>
+
+<section id="requirements">
+  <h2>Requirements</h2>
+  <p>placeholder</p>
+  <p class="note">The main menu has no exit button because the game runs in the browser.</p>
+</section>
+
+<section id="design">
+  <h2>Design</h2>
+
+  <h3>Mock up</h3>
+  <p class="note">Early mockup of the play screen. The tower and its health blocks sit on the left, enemies carrying words walk in from the right, and the typing bar runs along the bottom. <strong>Made in Paint 3D.</strong></p>
+  <img class="diagram" src="images/Mockup.png" alt="Mockup of the Typing Tower Defense play screen">
+
+  <h3>Use case diagram</h3>
+  <p>place holder</p>
+
+  <h3>Class diagram</h3>
+  <p>placeholder</p>
+</section>
+
+<section id="team">
+  <h2>Team</h2>
+  <div class="grid team">
+    <div class="card"><p>placeholder picture</p><h3>Sandy He</h3><p>Developer</p><p>Email: PLACEHOLDER</p></div>
+    <div class="card"><p>placeholder picture</p><h3>Benny Chen</h3><p>Developer</p><p>Email: PLACEHOLDER</p></div>
+    <div class="card"><p>placeholder picture</p><h3>Soon Thal</h3><p>Developer</p><p>Email: PLACEHOLDER</p></div>
+    <div class="card"><p>placeholder picture</p><h3>Alex Ly</h3><p>Developer</p><p>Email: PLACEHOLDER</p></div>
+    <div class="card"><p>placeholder picture</p><h3>Joshua MacNeil</h3><p>Developer</p><p>Email: PLACEHOLDER</p></div>
+  </div>
+  </section>
+
+  <section id="credit">
+  <h2>Credit</h2>
+  <h3>Built with</h3>
+  <p>Godot, exported for the web and hosted on GitHub Pages.</p>
+  <p class ="note"><a href="https://github.com/Lychiez/TypingTowerDefense">Source code on GitHub</a></p>
+</section>
+
+
+
+</main>
+</body>
+</html>

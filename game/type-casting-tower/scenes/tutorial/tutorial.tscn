@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://by5d5ifaempve"]
+
+[ext_resource type="Script" uid="uid://13tci7func84" path="res://scenes/tutorial/return_button.gd" id="1_ymgc8"]
+
+[node name="Tutorial" type="Control" unique_id=1256945698]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=14995097]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 122.0
+offset_right = 787.0
+offset_bottom = 145.0
+text = "Tutorial goes here when ready :) (may also need to change the type of scene it is)"
+
+[node name="ReturnButton" type="Button" parent="." unique_id=904310164]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 21.0
+offset_right = 148.0
+offset_bottom = 90.0
+text = "Back"
+script = ExtResource("1_ymgc8")

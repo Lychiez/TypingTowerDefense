@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://begokwvgr3efm"]
+
+[ext_resource type="Script" uid="uid://dgh6c1n6e78ts" path="res://scenes/shop/return_button.gd" id="1_0jbbo"]
+[ext_resource type="Script" uid="uid://cnljgval23awh" path="res://scenes/shop/shop_music.gd" id="1_7lxhl"]
+[ext_resource type="AudioStream" uid="uid://c32nht6qutet1" path="res://assets/audio/From The Start - Laufey (shop theme).mp3" id="2_qaxay"]
+
+[node name="Shop" type="Control" unique_id=1048750180]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7lxhl")
+
+[node name="Label" type="Label" parent="." unique_id=849692473]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 42.0
+offset_right = 589.0
+offset_bottom = 65.0
+text = "Shop Goes Here When Ready :)"
+
+[node name="ReturnButton" type="Button" parent="." unique_id=982213426]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 23.0
+offset_top = 30.0
+offset_right = 131.0
+offset_bottom = 80.0
+text = "Back"
+script = ExtResource("1_0jbbo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=95347937]
+unique_name_in_owner = true
+stream = ExtResource("2_qaxay")
+volume_db = -30.444

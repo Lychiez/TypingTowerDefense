@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cvu73adlupnos"]
 
 [ext_resource type="Script" uid="uid://drhv20ltlvb65" path="res://scenes/menus/main_menu.gd" id="1_xqga4"]
+[ext_resource type="Texture2D" uid="uid://bjtyd3klwrxx8" path="res://assets/images/GrassLand_Background_Guide.png" id="2_ovrgc"]
 
 [node name="MainMenu" type="Control" unique_id=911543463]
 layout_mode = 3
@@ -11,14 +12,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xqga4")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1653983690]
+[node name="Background" type="TextureRect" parent="." unique_id=1170736907]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.35832933, 0.5157945, 0.24406064, 1)
+texture = ExtResource("2_ovrgc")
 
 [node name="MarginContainer" type="CenterContainer" parent="." unique_id=807000633]
 layout_mode = 1

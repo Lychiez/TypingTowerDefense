@@ -14,6 +14,10 @@ config/name="TypeCastingTower"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MusicState="*uid://y5711nv4rl1b"
+
 [display]
 
 window/stretch/mode="canvas_items"

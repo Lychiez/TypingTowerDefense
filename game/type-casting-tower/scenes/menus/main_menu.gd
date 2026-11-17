@@ -4,6 +4,7 @@ extends Control
 @onready var tutorial_button: Button = %TutorialButton
 @onready var options_button: Button = %OptionsButton
 @onready var exit_button: Button = %ExitButton
+@onready var high_score_button: Button = %HighScoreButton
 
 func _ready() -> void:
 	play_button.pressed.connect(_on_play_pressed)
@@ -30,6 +31,9 @@ func _on_options_pressed() -> void:
 	print("Options not built yet")
 	get_tree().change_scene_to_file("res://scenes/options/options.tscn")
 
+func _on_high_score_pressed() -> void:
+	print ("High Score not built yet")
+	get_tree().change_scene_to_file("res://scenes/options/high_score.tscn")
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cvu73adlupnos"]
+
+[ext_resource type="Script" uid="uid://drhv20ltlvb65" path="res://scenes/menus/main_menu.gd" id="1_xqga4"]
+
+[node name="MainMenu" type="Control" unique_id=911543463]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xqga4")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1653983690]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.35832933, 0.5157945, 0.24406064, 1)
+
+[node name="MarginContainer" type="CenterContainer" parent="." unique_id=807000633]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1068805689]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1364257234]
+layout_mode = 2
+text = "Type Casting Tower"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=42509793]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 67)
+layout_mode = 2
+text = "Play"
+
+[node name="ShopButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=349500381]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 67)
+layout_mode = 2
+text = "Shop"
+
+[node name="TutorialButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1694220722]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 67)
+layout_mode = 2
+text = "Tutorial"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=861845216]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 67)
+layout_mode = 2
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=791638417]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 67)
+layout_mode = 2
+text = "Exit"

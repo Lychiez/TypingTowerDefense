@@ -7,20 +7,126 @@
 [ext_resource type="Texture2D" uid="uid://bwy45db7p8ou2" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Background/GrassLand_Background_5.png" id="3_5i0tg"]
 [ext_resource type="Texture2D" uid="uid://dwhx2rxaqoeqx" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Props/GrassLand_Tree.png" id="4_lfrn8"]
 [ext_resource type="Texture2D" uid="uid://bt242uhnxdc3d" path="res://assets/images/TowerSpriteSheet.png" id="6_5i0tg"]
-[ext_resource type="PackedScene" uid="uid://ddj55mj6w515b" path="res://scenes/player/Player.tscn" id="7_otnwt"]
-[ext_resource type="PackedScene" uid="uid://gtbedv7aqoth" path="res://scenes/enemy/enemy.tscn" id="8_4j704"]
+[ext_resource type="Texture2D" uid="uid://dcpojqrgvq0wx" path="res://assets/warloclSpriteSheet.png" id="6_vaxfo"]
+[ext_resource type="Texture2D" uid="uid://baqj2fjqiyrs1" path="res://assets/goblin_frames/attack_01.png" id="7_5jirj"]
+[ext_resource type="Texture2D" uid="uid://booxq7sev5jit" path="res://assets/images/fireball.png" id="7_ftsea"]
+[ext_resource type="Texture2D" uid="uid://c45a1ypatimov" path="res://assets/goblin_frames/attack_03.png" id="8_vaxfo"]
+[ext_resource type="Texture2D" uid="uid://cueiqfthyv701" path="res://assets/goblin_frames/attack_02.png" id="9_ftsea"]
+[ext_resource type="Texture2D" uid="uid://vehu78vy88dw" path="res://assets/goblin_frames/attack_04.png" id="10_otnwt"]
+[ext_resource type="Texture2D" uid="uid://bdi8vcgbhc4jr" path="res://assets/goblin_frames/walk_01.png" id="11_3xj4h"]
 [ext_resource type="Script" uid="uid://bsmwya4r70cxt" path="res://scenes/game/tower.gd" id="11_5v6r0"]
+[ext_resource type="Texture2D" uid="uid://bvbll7yg46gl0" path="res://assets/goblin_frames/walk_02.png" id="12_5v6r0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fffr6"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xj4h"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(50, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otnwt"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(25, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v6r0"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(75, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaxfo"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(0, 26, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftsea"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(25, 26, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyinl"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(75, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10c2w"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(75, 26, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg2xm"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(100, 26, 25, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fffr6"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_3xj4h")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_otnwt")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_5v6r0")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vaxfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftsea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyinl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10c2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg2xm")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5v6r0"]
 size = Vector2(46.217644, 168.25226)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5i0tg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_5jirj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vaxfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ftsea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_otnwt")
+}],
+"loop": 1,
+"name": &"Goblin Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("11_3xj4h")
+}, {
+"duration": 1.5,
+"texture": ExtResource("12_5v6r0")
+}],
+"loop": 1,
+"name": &"Goblin walk",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq1x7"]
 bg_color = Color(1, 1, 1, 1)
 
-[node name="Game" type="Control" unique_id=1119010962 node_paths=PackedStringArray("tower", "enemy", "player")]
+[node name="Game" type="Control" unique_id=1119010962 node_paths=PackedStringArray("tower", "enemy")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,8 +136,7 @@ grow_vertical = 2
 scale = Vector2(0.92730117, 0.9190501)
 script = ExtResource("1_otnwt")
 tower = NodePath("Tower")
-enemy = NodePath("EnemySprite")
-player = NodePath("player")
+enemy = NodePath("Enemy Goblin")
 
 [node name="Clouds" type="TextureRect" parent="." unique_id=1802483545]
 layout_mode = 1
@@ -153,7 +258,6 @@ layout_mode = 2
 texture = ExtResource("4_lfrn8")
 
 [node name="Textbox" type="RichTextLabel" parent="." unique_id=849033249]
-visible = false
 custom_minimum_size = Vector2(512, 128)
 layout_mode = 0
 offset_left = 344.0
@@ -178,13 +282,18 @@ offset_bottom = 99.0
 text = "Back"
 script = ExtResource("1_sul5r")
 
-[node name="EnemySprite" parent="." unique_id=288556815 instance=ExtResource("8_4j704")]
-position = Vector2(1157.1215, 557.0969)
-scale = Vector2(1, 0.99999994)
-
-[node name="player" parent="." unique_id=912395618 instance=ExtResource("7_otnwt")]
-position = Vector2(197, 203)
+[node name="Wizard" type="AnimatedSprite2D" parent="." unique_id=1055826836]
+position = Vector2(206, 193)
 scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_fffr6")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.47632495
+
+[node name="Fireball" type="Sprite2D" parent="Wizard" unique_id=1200143427]
+position = Vector2(37.142857, -1.1428556)
+scale = Vector2(2, 2)
+texture = ExtResource("7_ftsea")
 
 [node name="Tower" type="Sprite2D" parent="." unique_id=1871822049]
 position = Vector2(201, 343)
@@ -201,6 +310,14 @@ scale = Vector2(1.0000001, 1)
 position = Vector2(-7.3142395, 54.004425)
 scale = Vector2(6.443546, 6.443546)
 shape = SubResource("RectangleShape2D_5v6r0")
+
+[node name="Enemy Goblin" type="AnimatedSprite2D" parent="." unique_id=1061011028]
+position = Vector2(1216.4332, 566.8897)
+scale = Vector2(0.37814164, 0.37814164)
+sprite_frames = SubResource("SpriteFrames_5i0tg")
+animation = &"Goblin walk"
+autoplay = "Goblin walk"
+frame_progress = 0.2482586
 
 [node name="Streak" type="Label" parent="." unique_id=1159214983]
 custom_minimum_size = Vector2(64, 64)

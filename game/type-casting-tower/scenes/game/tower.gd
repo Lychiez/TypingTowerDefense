@@ -17,8 +17,7 @@ func _update_appearance() -> void:
 			
 
 func _ready() -> void:
-	#$Area2D.area_entered.connect(_on_enemy_entered)
-	pass
+	$Area2D.area_entered.connect(_on_enemy_entered)
 
 func _on_enemy_entered(area: Area2D) -> void:
 	# Assumes the enemy's Area2D is a child of its sprite.

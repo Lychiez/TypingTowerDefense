@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TypeCastingTower"
-run/main_scene="uid://d15dgw0pqs115"
+run/main_scene="uid://cvu73adlupnos"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,16 +19,11 @@ config/icon="res://icon.svg"
 
 MusicState="*uid://y5711nv4rl1b"
 ScoreManager="*uid://d17j2iovfeas7"
-WordClass="*uid://cf66mvc4wqowy"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-
-[global_group]
-
-enemies=""
 
 [physics]
 

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 MusicState="*uid://y5711nv4rl1b"
 ScoreManager="*uid://d17j2iovfeas7"
+PlayerData="*uid://ljnrmmgf6uwu"
 
 [display]
 

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://gtbedv7aqoth"]
+
+[ext_resource type="Script" uid="uid://coi6ome0owfbh" path="res://scenes/enemy/enemy.gd" id="1_2pb1h"]
+[ext_resource type="Texture2D" uid="uid://bdi8vcgbhc4jr" path="res://assets/goblin_frames/walk_01.png" id="2_40wdo"]
+[ext_resource type="Texture2D" uid="uid://bvbll7yg46gl0" path="res://assets/goblin_frames/walk_02.png" id="3_tjssy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3385"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_40wdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tjssy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vamnb"]
+size = Vector2(135, 160)
+
+[node name="EnemySprite" type="CharacterBody2D" unique_id=288556815 groups=["enemies"]]
+script = ExtResource("1_2pb1h")
+
+[node name="EnemyText" type="RichTextLabel" parent="." unique_id=1401574089]
+clip_contents = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.5
+offset_top = -100.0
+offset_right = 24.5
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tester"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Enemy" type="AnimatedSprite2D" parent="." unique_id=1191010588]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o3385")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1078679206]
+position = Vector2(1.5, 4)
+shape = SubResource("RectangleShape2D_vamnb")

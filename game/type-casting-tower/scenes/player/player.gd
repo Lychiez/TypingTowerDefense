@@ -30,7 +30,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.keycode == KEY_ENTER:
 			if input == currEnemy.currWord:
 				print("Word is correct!")
-				currEnemy.currWord = WordClass.wordsList.pick_random()
 				deal_damage(currEnemy)
 				streak += 1
 				streak_changed.emit(streak)
@@ -50,7 +49,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			grab_enemy(typedChar)
 		input += typedChar
 		print("Pressed ", typedChar)
-		print(input)
 		# For Color Coding the Word as you type.
 		if currEnemy != null:
 			currEnemy.checkAcc(input)
@@ -70,6 +68,7 @@ func grab_enemy(currentChar: String) -> void:
 func deal_damage(currEnemy: Enemy) -> void:
 	if (currEnemy.health > 0):
 		currEnemy.health -= 50
+		currEnemy.currWord = WordClass.wordsList.pick_random()
 	if currEnemy.health == 0:
 		print("Enemy defeated")
 		currEnemy.destroy()

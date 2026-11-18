@@ -26,15 +26,14 @@ script = ExtResource("1_2pb1h")
 
 [node name="EnemyText" type="RichTextLabel" parent="." unique_id=1401574089]
 clip_contents = false
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -24.5
-offset_top = -100.0
-offset_right = 24.5
-offset_bottom = -77.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -49.0
+offset_top = -125.0
+offset_bottom = -102.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
 text = "Tester"
 fit_content = true
 autowrap_mode = 0

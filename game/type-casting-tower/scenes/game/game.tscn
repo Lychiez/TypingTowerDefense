@@ -1,22 +1,276 @@
 [gd_scene format=3 uid="uid://d15dgw0pqs115"]
 
+[ext_resource type="Texture2D" uid="uid://b2gu0ea2h8er7" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Background/GrassLand_Background_1.png" id="1_kelw5"]
+[ext_resource type="Script" uid="uid://t62321edhij1" path="res://scenes/game/gameplay.gd" id="1_otnwt"]
 [ext_resource type="Script" uid="uid://cvxwc4hib6pgk" path="res://scenes/game/return_button.gd" id="1_sul5r"]
+[ext_resource type="Texture2D" uid="uid://5685qryksv1" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Background/GrassLand_Background_2.png" id="2_lfrn8"]
+[ext_resource type="Texture2D" uid="uid://bwy45db7p8ou2" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Background/GrassLand_Background_5.png" id="3_5i0tg"]
+[ext_resource type="Texture2D" uid="uid://dwhx2rxaqoeqx" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Props/GrassLand_Tree.png" id="4_lfrn8"]
+[ext_resource type="Texture2D" uid="uid://bt242uhnxdc3d" path="res://assets/images/TowerSpriteSheet.png" id="6_5i0tg"]
+[ext_resource type="Texture2D" uid="uid://dcpojqrgvq0wx" path="res://assets/warloclSpriteSheet.png" id="6_vaxfo"]
+[ext_resource type="Texture2D" uid="uid://baqj2fjqiyrs1" path="res://assets/goblin_frames/attack_01.png" id="7_5jirj"]
+[ext_resource type="Texture2D" uid="uid://booxq7sev5jit" path="res://assets/images/fireball.png" id="7_ftsea"]
+[ext_resource type="Texture2D" uid="uid://c45a1ypatimov" path="res://assets/goblin_frames/attack_03.png" id="8_vaxfo"]
+[ext_resource type="Texture2D" uid="uid://cueiqfthyv701" path="res://assets/goblin_frames/attack_02.png" id="9_ftsea"]
+[ext_resource type="Texture2D" uid="uid://vehu78vy88dw" path="res://assets/goblin_frames/attack_04.png" id="10_otnwt"]
+[ext_resource type="Texture2D" uid="uid://bdi8vcgbhc4jr" path="res://assets/goblin_frames/walk_01.png" id="11_3xj4h"]
+[ext_resource type="Script" uid="uid://bsmwya4r70cxt" path="res://scenes/game/tower.gd" id="11_5v6r0"]
+[ext_resource type="Texture2D" uid="uid://bvbll7yg46gl0" path="res://assets/goblin_frames/walk_02.png" id="12_5v6r0"]
 
-[node name="Game" type="Control" unique_id=1119010962]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fffr6"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xj4h"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(50, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otnwt"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(25, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v6r0"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(75, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaxfo"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(0, 26, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftsea"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(25, 26, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyinl"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(75, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10c2w"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(75, 26, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg2xm"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(100, 26, 25, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fffr6"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_3xj4h")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_otnwt")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_5v6r0")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vaxfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftsea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyinl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10c2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg2xm")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v6r0"]
+size = Vector2(46.217644, 168.25226)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5i0tg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_5jirj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vaxfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ftsea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_otnwt")
+}],
+"loop": 1,
+"name": &"Goblin Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("11_3xj4h")
+}, {
+"duration": 1.5,
+"texture": ExtResource("12_5v6r0")
+}],
+"loop": 1,
+"name": &"Goblin walk",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq1x7"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Game" type="Control" unique_id=1119010962 node_paths=PackedStringArray("tower", "enemy")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.92730117, 0.9190501)
+script = ExtResource("1_otnwt")
+tower = NodePath("Tower")
+enemy = NodePath("Enemy Goblin")
 
-[node name="Label" type="Label" parent="." unique_id=461172529]
-layout_mode = 0
-offset_left = 190.0
-offset_top = 164.0
-offset_right = 792.0
+[node name="Clouds" type="TextureRect" parent="." unique_id=1802483545]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 328.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8570078, 0.8430183)
+texture = ExtResource("1_kelw5")
+
+[node name="Background" type="TextureRect" parent="." unique_id=63886686]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.000002
+offset_right = 360.0
 offset_bottom = 187.0
-text = "Game goes here when ready :) (may also need to change the type of scene it is)"
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.83960974, 0.9465891)
+texture = ExtResource("2_lfrn8")
+
+[node name="Grass background" type="TextureRect" parent="." unique_id=2117250427]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 328.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8769534, 0.93367624)
+texture = ExtResource("3_5i0tg")
+
+[node name="Far back trees" type="HBoxContainer" parent="." unique_id=1665015136]
+modulate = Color(0.2901961, 0.1764706, 1, 1)
+layout_mode = 0
+offset_left = -33.73044
+offset_top = 213.61348
+offset_right = 302.26956
+offset_bottom = 293.61346
+scale = Vector2(3.90012, 4.6147957)
+
+[node name="Tree" type="TextureRect" parent="Far back trees" unique_id=519717666]
+layout_mode = 2
+texture = ExtResource("4_lfrn8")
+
+[node name="Tree5" type="TextureRect" parent="Far back trees" unique_id=28296455]
+layout_mode = 2
+texture = ExtResource("4_lfrn8")
+
+[node name="Tree2" type="TextureRect" parent="Far back trees" unique_id=1477871544]
+layout_mode = 2
+texture = ExtResource("4_lfrn8")
+
+[node name="Tree3" type="TextureRect" parent="Far back trees" unique_id=1436539130]
+layout_mode = 2
+texture = ExtResource("4_lfrn8")
+
+[node name="Tree4" type="TextureRect" parent="Far back trees" unique_id=10472730]
+layout_mode = 2
+texture = ExtResource("4_lfrn8")
+
+[node name="Mid trees" type="HBoxContainer" parent="." unique_id=1045453369]
+modulate = Color(0.38039216, 0.38039216, 1, 1)
+layout_mode = 0
+offset_left = 32.73837
+offset_top = 180.1232
+offset_right = 300.73837
+offset_bottom = 260.12323
+scale = Vector2(4.023761, 5.0589147)
+
+[node name="Tree" type="TextureRect" parent="Mid trees" unique_id=1524802687]
+layout_mode = 2
+texture = ExtResource("4_lfrn8")
+
+[node name="Tree2" type="TextureRect" parent="Mid trees" unique_id=1276873402]
+layout_mode = 2
+texture = ExtResource("4_lfrn8")
+
+[node name="Tree3" type="TextureRect" parent="Mid trees" unique_id=274294552]
+layout_mode = 2
+texture = ExtResource("4_lfrn8")
+
+[node name="Tree4" type="TextureRect" parent="Mid trees" unique_id=850447353]
+layout_mode = 2
+texture = ExtResource("4_lfrn8")
+
+[node name="Front Trees" type="HBoxContainer" parent="." unique_id=1657201418]
+layout_mode = 0
+offset_left = 2.206379
+offset_top = 260.46353
+offset_right = 338.2064
+offset_bottom = 340.46353
+scale = Vector2(3.8377442, 4.148102)
+
+[node name="Tree" type="TextureRect" parent="Front Trees" unique_id=1779884433]
+layout_mode = 2
+texture = ExtResource("4_lfrn8")
+
+[node name="Tree2" type="TextureRect" parent="Front Trees" unique_id=358224644]
+layout_mode = 2
+texture = ExtResource("4_lfrn8")
+
+[node name="Tree5" type="TextureRect" parent="Front Trees" unique_id=904225812]
+layout_mode = 2
+texture = ExtResource("4_lfrn8")
+
+[node name="Tree3" type="TextureRect" parent="Front Trees" unique_id=536424000]
+layout_mode = 2
+texture = ExtResource("4_lfrn8")
+
+[node name="Tree4" type="TextureRect" parent="Front Trees" unique_id=670973889]
+layout_mode = 2
+texture = ExtResource("4_lfrn8")
+
+[node name="Textbox" type="RichTextLabel" parent="." unique_id=849033249]
+custom_minimum_size = Vector2(512, 128)
+layout_mode = 0
+offset_left = 344.0
+offset_top = 46.0
+offset_right = 856.0
+offset_bottom = 174.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fffr6")
+bbcode_enabled = true
+text = "TESTER"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ReturnButton" type="Button" parent="." unique_id=237903288]
 unique_name_in_owner = true
@@ -27,3 +281,79 @@ offset_right = 147.0
 offset_bottom = 99.0
 text = "Back"
 script = ExtResource("1_sul5r")
+
+[node name="Wizard" type="AnimatedSprite2D" parent="." unique_id=1055826836]
+position = Vector2(206, 193)
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_fffr6")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.47632495
+
+[node name="Fireball" type="Sprite2D" parent="Wizard" unique_id=1200143427]
+position = Vector2(37.142857, -1.1428556)
+scale = Vector2(2, 2)
+texture = ExtResource("7_ftsea")
+
+[node name="Tower" type="Sprite2D" parent="." unique_id=1871822049]
+position = Vector2(201, 343)
+scale = Vector2(0.7206087, 0.7206087)
+texture = ExtResource("6_5i0tg")
+region_enabled = true
+region_rect = Rect2(134, 2, 345, 867)
+script = ExtResource("11_5v6r0")
+
+[node name="Tower2" type="Area2D" parent="Tower" unique_id=1253713721]
+scale = Vector2(1.0000001, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Tower2" unique_id=1231442045]
+position = Vector2(-7.3142395, 54.004425)
+scale = Vector2(6.443546, 6.443546)
+shape = SubResource("RectangleShape2D_5v6r0")
+
+[node name="Enemy Goblin" type="AnimatedSprite2D" parent="." unique_id=1061011028]
+position = Vector2(1216.4332, 566.8897)
+scale = Vector2(0.37814164, 0.37814164)
+sprite_frames = SubResource("SpriteFrames_5i0tg")
+animation = &"Goblin walk"
+autoplay = "Goblin walk"
+frame_progress = 0.2482586
+
+[node name="Streak" type="Label" parent="." unique_id=1159214983]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 1024.4784
+offset_top = 45.699352
+offset_right = 1174.4784
+offset_bottom = 109.699356
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_gq1x7")
+text = "Streak: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Game Over Box" type="VBoxContainer" parent="." unique_id=913896719]
+visible = false
+custom_maximum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 347.00003
+offset_top = 46.0
+offset_right = 443.00003
+offset_bottom = 105.0
+scale = Vector2(12.619225, 12.619225)
+
+[node name="Game Over Label" type="Label" parent="Game Over Box" unique_id=1098913626]
+custom_maximum_size = Vector2(40, -1)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_font_sizes/font_size = 7
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="Score Display" type="Label" parent="Game Over Box" unique_id=754789808]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+text = "Your Score is:
+23"
+horizontal_alignment = 1

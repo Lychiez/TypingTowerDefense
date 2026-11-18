@@ -11,6 +11,7 @@ func _ready() -> void:
 	shop_button.pressed.connect(_on_shop_pressed)
 	tutorial_button.pressed.connect(_on_tutorial_pressed)
 	options_button.pressed.connect(_on_options_pressed)
+	high_score_button.pressed.connect(_on_high_score_pressed)
 	exit_button.pressed.connect(_on_exit_pressed)
 	play_button.grab_focus()
 
@@ -33,7 +34,7 @@ func _on_options_pressed() -> void:
 
 func _on_high_score_pressed() -> void:
 	print ("High Score not built yet")
-	get_tree().change_scene_to_file("res://scenes/options/high_score.tscn")
+	get_tree().change_scene_to_file("res://scenes/highscore/high_score.tscn")
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

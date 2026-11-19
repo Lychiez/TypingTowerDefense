@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://by5d5ifaempve"]
 
-[ext_resource type="Script" uid="uid://13tci7func84" path="res://scenes/tutorial/return_button.gd" id="1_ymgc8"]
+[ext_resource type="Script" uid="uid://bd6idsrifm42" path="res://scenes/tutorial/tutorial.gd" id="1_g40di"]
+[ext_resource type="AudioStream" uid="uid://c32nht6qutet1" path="res://assets/audio/From The Start - Laufey (shop theme).mp3" id="1_pq3l0"]
+[ext_resource type="Texture2D" uid="uid://c3lgifyva7j86" path="res://assets/images/GrassLand_Background_Guide.png" id="3_g7eoy"]
+[ext_resource type="Script" uid="uid://c3nyf7ctx0w44" path="res://scenes/options/return_button.gd" id="6_hsofu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g40di"]
+bg_color = Color(0.16206557, 0.1620656, 0.16206554, 0.8235294)
 
 [node name="Tutorial" type="Control" unique_id=1256945698]
 layout_mode = 3
@@ -9,21 +15,55 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_g40di")
 
-[node name="Label" type="Label" parent="." unique_id=14995097]
-layout_mode = 0
-offset_left = 170.0
-offset_top = 122.0
-offset_right = 787.0
-offset_bottom = 145.0
-text = "Tutorial goes here when ready :) (may also need to change the type of scene it is)"
-
-[node name="ReturnButton" type="Button" parent="." unique_id=904310164]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2006148972]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 20.0
-offset_top = 21.0
-offset_right = 148.0
-offset_bottom = 90.0
+stream = ExtResource("1_pq3l0")
+volume_db = -32.0
+
+[node name="Background" type="TextureRect" parent="." unique_id=2112377243]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 240.0
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_g7eoy")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=850805085]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.12
+anchor_right = 0.85
+anchor_bottom = 0.88
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g40di")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1649821469]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="PanelContainer/MarginContainer" unique_id=676071145]
+layout_mode = 2
+bbcode_enabled = true
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer" unique_id=1293211260]
+visible = false
+light_mask = 0
+layout_mode = 2
+color = Color(0.18717614, 0.18717614, 0.18717614, 1)
+
+[node name="ReturnButton" type="Button" parent="." unique_id=156469243]
+custom_minimum_size = Vector2(120, 50)
+custom_maximum_size = Vector2(120, 50)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 16.0
+offset_top = 16.0
 text = "Back"
-script = ExtResource("1_ymgc8")
+script = ExtResource("6_hsofu")

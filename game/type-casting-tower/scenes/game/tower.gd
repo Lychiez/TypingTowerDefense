@@ -20,16 +20,6 @@ func _ready() -> void:
 	#$Area2D.area_entered.connect(_on_enemy_entered)
 	pass
 
-func _on_enemy_entered(area: Area2D) -> void:
-	# Assumes the enemy's Area2D is a child of its sprite.
-	var enemy := area.get_parent()
-	if not enemy.is_in_group("enemies"):
-		return
-	if enemy.is_queued_for_deletion():
-		return
-	enemy.queue_free()
-	_decrement_health()
-
 func _get_health() -> int:
 	return health
 
@@ -41,3 +31,11 @@ func _decrement_health() -> void:
 	# Update the tower's appearance here.
 	if health == 0:
 		destroyed.emit()
+
+func _on_tower_2_body_entered(body: Node2D) -> void:
+	if not body.is_in_group("enemies") or body.is_queued_for_deletion():
+		return
+	body.queue_free()
+	print("This shit do NOT work")
+	_decrement_health()
+		

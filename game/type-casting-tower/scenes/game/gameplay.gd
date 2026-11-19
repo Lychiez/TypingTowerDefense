@@ -22,7 +22,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
+
 #func update_word_display() ->void:
 	#if target_word.is_empty():
 		#target_word = WordClass.wordsList.pick_random()

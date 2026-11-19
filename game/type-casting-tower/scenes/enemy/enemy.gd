@@ -57,12 +57,17 @@ func touchingTower(Vector2) -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# spawn() is set in ready for enemy just for prototype
+	# spawn() will be called by wave factory function in later
+	# prototypes likely
 	spawn()
 	Sprite.play("default")
-	
-
 
 # _process will mainly be used for loading and for animating the sprites frames.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position.x -= 10 * delta
+	position.x -= 30 * delta
+
+
+func _on_tower_2_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

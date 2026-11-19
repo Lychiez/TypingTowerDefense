@@ -20,7 +20,7 @@ size = Vector2(46.217644, 168.25226)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq1x7"]
 bg_color = Color(1, 1, 1, 1)
 
-[node name="Game" type="Control" unique_id=1119010962 node_paths=PackedStringArray("tower", "enemy", "player")]
+[node name="Game" type="Control" unique_id=1119010962 node_paths=PackedStringArray("tower", "player")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,7 +30,6 @@ grow_vertical = 2
 scale = Vector2(0.92730117, 0.9190501)
 script = ExtResource("1_otnwt")
 tower = NodePath("Tower")
-enemy = NodePath("EnemySprite")
 player = NodePath("player")
 
 [node name="Clouds" type="TextureRect" parent="." unique_id=1802483545]
@@ -179,7 +178,7 @@ text = "Back"
 script = ExtResource("1_sul5r")
 
 [node name="EnemySprite" parent="." unique_id=288556815 instance=ExtResource("8_4j704")]
-position = Vector2(1157.1215, 557.0969)
+position = Vector2(726.84045, 544.04)
 scale = Vector2(1, 0.99999994)
 
 [node name="player" parent="." unique_id=912395618 instance=ExtResource("7_otnwt")]
@@ -240,3 +239,5 @@ theme_override_font_sizes/font_size = 4
 text = "Your Score is:
 23"
 horizontal_alignment = 1
+
+[connection signal="body_entered" from="Tower/Tower2" to="Tower" method="_on_tower_2_body_entered"]

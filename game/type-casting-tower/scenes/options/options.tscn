@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://dayc3dw0wsghi"]
 
 [ext_resource type="Script" uid="uid://c3nyf7ctx0w44" path="res://scenes/options/return_button.gd" id="1_ac427"]
+[ext_resource type="Script" uid="uid://ctphs17c3nh8g" path="res://scenes/options/option_music.gd" id="1_g56r3"]
+[ext_resource type="AudioStream" uid="uid://c32nht6qutet1" path="res://assets/audio/From The Start - Laufey (shop theme).mp3" id="1_kmbin"]
+[ext_resource type="Texture2D" uid="uid://c3lgifyva7j86" path="res://assets/images/GrassLand_Background_Guide.png" id="2_qe4tn"]
+[ext_resource type="Script" uid="uid://btmreds7gaovr" path="res://scenes/options/VBoxContainter.gd" id="4_g56r3"]
+[ext_resource type="Script" uid="uid://dd652cr551d7r" path="res://scenes/options/Volume.gd" id="5_f2ajo"]
 
 [node name="Options" type="Control" unique_id=1375746285]
 layout_mode = 3
@@ -9,21 +14,65 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_g56r3")
 
-[node name="Label" type="Label" parent="." unique_id=878335530]
-layout_mode = 0
-offset_left = 298.0
-offset_top = 107.0
-offset_right = 531.0
-offset_bottom = 130.0
-text = "Options go here when ready :)"
-
-[node name="ReturnButton" type="Button" parent="." unique_id=1371808445]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=876722383]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 23.0
-offset_top = 19.0
-offset_right = 138.0
-offset_bottom = 89.0
+stream = ExtResource("1_kmbin")
+volume_db = -32.0
+autoplay = true
+
+[node name="Background" type="TextureRect" parent="." unique_id=969090818]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qe4tn")
+
+[node name="MarginContainer" type="CenterContainer" parent="." unique_id=1535703982]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=23168602]
+layout_mode = 2
+theme_override_constants/separation = 4
+script = ExtResource("4_g56r3")
+
+[node name="Options" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1742401767]
+layout_mode = 2
+text = "Options"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=455275349]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Volume" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=231443499]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Volume"
+
+[node name="Value" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1397554652]
+layout_mode = 2
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer" unique_id=773116444]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+value = 50.0
+script = ExtResource("5_f2ajo")
+
+[node name="ReturnButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1371808445]
+custom_minimum_size = Vector2(250, 67)
+layout_mode = 2
 text = "Back"
 script = ExtResource("1_ac427")

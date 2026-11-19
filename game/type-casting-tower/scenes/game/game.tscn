@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://b2gu0ea2h8er7" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Background/GrassLand_Background_1.png" id="1_kelw5"]
 [ext_resource type="Script" uid="uid://t62321edhij1" path="res://scenes/game/gameplay.gd" id="1_otnwt"]
-[ext_resource type="Script" uid="uid://cvxwc4hib6pgk" path="res://scenes/game/return_button.gd" id="1_sul5r"]
 [ext_resource type="Texture2D" uid="uid://5685qryksv1" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Background/GrassLand_Background_2.png" id="2_lfrn8"]
 [ext_resource type="Texture2D" uid="uid://bwy45db7p8ou2" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Background/GrassLand_Background_5.png" id="3_5i0tg"]
 [ext_resource type="Texture2D" uid="uid://dwhx2rxaqoeqx" path="res://assets/Multi_Platformer_Tileset_Free/GrassLand/Props/GrassLand_Tree.png" id="4_lfrn8"]
+[ext_resource type="Script" uid="uid://ckw8fydfo2vhy" path="res://scripts/return_button.gd" id="6_4j704"]
 [ext_resource type="Texture2D" uid="uid://bt242uhnxdc3d" path="res://assets/images/TowerSpriteSheet.png" id="6_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://ddj55mj6w515b" path="res://scenes/player/Player.tscn" id="7_otnwt"]
 [ext_resource type="PackedScene" uid="uid://gtbedv7aqoth" path="res://scenes/enemy/enemy.tscn" id="8_4j704"]
@@ -152,7 +152,6 @@ layout_mode = 2
 texture = ExtResource("4_lfrn8")
 
 [node name="Textbox" type="RichTextLabel" parent="." unique_id=849033249]
-visible = false
 custom_minimum_size = Vector2(512, 128)
 layout_mode = 0
 offset_left = 344.0
@@ -175,7 +174,7 @@ offset_top = 33.0
 offset_right = 147.0
 offset_bottom = 99.0
 text = "Back"
-script = ExtResource("1_sul5r")
+script = ExtResource("6_4j704")
 
 [node name="EnemySprite" parent="." unique_id=288556815 instance=ExtResource("8_4j704")]
 position = Vector2(726.84045, 544.04)

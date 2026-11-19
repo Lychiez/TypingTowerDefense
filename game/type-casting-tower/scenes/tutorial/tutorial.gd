@@ -5,7 +5,6 @@ extends Control
 @onready var panel: PanelContainer = $PanelContainer
 @onready var text: RichTextLabel = $PanelContainer/MarginContainer/Text
 @onready var return_button: Button = $ReturnButton
-@onready var music: AudioStreamPlayer = $AudioStreamPlayer
 
 
 const TUTORIAL_TEXT := """[font_size=32]OVERVIEW[/font_size]
@@ -32,6 +31,5 @@ Mouse: navigate menus.
 """
 
 func _ready() -> void:
-	music.play(MusicState.music)
 
 	text.text = TUTORIAL_TEXT

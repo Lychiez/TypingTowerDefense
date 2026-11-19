@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cvu73adlupnos"]
 
 [ext_resource type="Script" uid="uid://drhv20ltlvb65" path="res://scenes/menus/main_menu.gd" id="1_xqga4"]
-[ext_resource type="AudioStream" uid="uid://c32nht6qutet1" path="res://assets/audio/From The Start - Laufey (shop theme).mp3" id="2_2o76q"]
 [ext_resource type="Texture2D" uid="uid://c3lgifyva7j86" path="res://assets/images/GrassLand_Background_Guide.png" id="2_ovrgc"]
 
 [node name="MainMenu" type="Control" unique_id=911543463]
@@ -12,11 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xqga4")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=73812665]
-stream = ExtResource("2_2o76q")
-volume_db = -32.0
-autoplay = true
 
 [node name="Background" type="TextureRect" parent="." unique_id=1170736907]
 layout_mode = 1

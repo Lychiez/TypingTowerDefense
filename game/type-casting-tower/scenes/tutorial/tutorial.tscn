@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://by5d5ifaempve"]
 
 [ext_resource type="Script" uid="uid://bd6idsrifm42" path="res://scenes/tutorial/tutorial.gd" id="1_g40di"]
-[ext_resource type="AudioStream" uid="uid://c32nht6qutet1" path="res://assets/audio/From The Start - Laufey (shop theme).mp3" id="1_pq3l0"]
+[ext_resource type="Script" uid="uid://ckw8fydfo2vhy" path="res://scripts/return_button.gd" id="3_bmltb"]
 [ext_resource type="Texture2D" uid="uid://c3lgifyva7j86" path="res://assets/images/GrassLand_Background_Guide.png" id="3_g7eoy"]
-[ext_resource type="Script" uid="uid://c3nyf7ctx0w44" path="res://scenes/options/return_button.gd" id="6_hsofu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g40di"]
 bg_color = Color(0.16206557, 0.1620656, 0.16206554, 0.8235294)
@@ -16,11 +15,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_g40di")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2006148972]
-unique_name_in_owner = true
-stream = ExtResource("1_pq3l0")
-volume_db = -32.0
 
 [node name="Background" type="TextureRect" parent="." unique_id=2112377243]
 layout_mode = 1
@@ -59,6 +53,7 @@ layout_mode = 2
 color = Color(0.18717614, 0.18717614, 0.18717614, 1)
 
 [node name="ReturnButton" type="Button" parent="." unique_id=156469243]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 50)
 custom_maximum_size = Vector2(120, 50)
 layout_mode = 1
@@ -66,4 +61,4 @@ anchors_preset = -1
 offset_left = 16.0
 offset_top = 16.0
 text = "Back"
-script = ExtResource("6_hsofu")
+script = ExtResource("3_bmltb")

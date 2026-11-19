@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dr5a48te54l5d" path="res://scenes/highscore/high_score.gd" id="1_cml1i"]
 [ext_resource type="Texture2D" uid="uid://c3lgifyva7j86" path="res://assets/images/GrassLand_Background_Guide.png" id="2_2kf0s"]
-[ext_resource type="Script" uid="uid://dggi2s34jjtlp" path="res://scenes/highscore/return_button.gd" id="3_cml1i"]
+[ext_resource type="Script" uid="uid://ckw8fydfo2vhy" path="res://scripts/return_button.gd" id="3_cml1i"]
 
 [node name="HighScore" type="Control" unique_id=1087629272]
 layout_mode = 3

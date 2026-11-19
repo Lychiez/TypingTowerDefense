@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://dayc3dw0wsghi"]
 
-[ext_resource type="Script" uid="uid://c3nyf7ctx0w44" path="res://scenes/options/return_button.gd" id="1_ac427"]
-[ext_resource type="Script" uid="uid://ctphs17c3nh8g" path="res://scenes/options/option_music.gd" id="1_g56r3"]
-[ext_resource type="AudioStream" uid="uid://c32nht6qutet1" path="res://assets/audio/From The Start - Laufey (shop theme).mp3" id="1_kmbin"]
 [ext_resource type="Texture2D" uid="uid://c3lgifyva7j86" path="res://assets/images/GrassLand_Background_Guide.png" id="2_qe4tn"]
+[ext_resource type="Script" uid="uid://ckw8fydfo2vhy" path="res://scripts/return_button.gd" id="4_025dt"]
 [ext_resource type="Script" uid="uid://btmreds7gaovr" path="res://scenes/options/VBoxContainter.gd" id="4_g56r3"]
 [ext_resource type="Script" uid="uid://dd652cr551d7r" path="res://scenes/options/Volume.gd" id="5_f2ajo"]
 
@@ -14,13 +12,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_g56r3")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=876722383]
-unique_name_in_owner = true
-stream = ExtResource("1_kmbin")
-volume_db = -32.0
-autoplay = true
 
 [node name="Background" type="TextureRect" parent="." unique_id=969090818]
 layout_mode = 1
@@ -75,4 +66,4 @@ script = ExtResource("5_f2ajo")
 custom_minimum_size = Vector2(250, 67)
 layout_mode = 2
 text = "Back"
-script = ExtResource("1_ac427")
+script = ExtResource("4_025dt")

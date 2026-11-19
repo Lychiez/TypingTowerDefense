@@ -1,5 +1,4 @@
 extends Control
-@onready var music: AudioStreamPlayer = $AudioStreamPlayer
 @onready var play_button: Button = %PlayButton
 @onready var shop_button: Button = %ShopButton
 @onready var tutorial_button: Button = %TutorialButton
@@ -9,7 +8,6 @@ extends Control
 
 
 func _ready() -> void:
-	music.play(MusicState.music)
 	play_button.pressed.connect(_on_play_pressed)
 	shop_button.pressed.connect(_on_shop_pressed)
 	tutorial_button.pressed.connect(_on_tutorial_pressed)

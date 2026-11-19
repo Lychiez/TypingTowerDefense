@@ -197,6 +197,7 @@ script = ExtResource("11_5v6r0")
 scale = Vector2(1.0000001, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tower/Tower2" unique_id=1231442045]
+visible = false
 position = Vector2(-7.3142395, 54.004425)
 scale = Vector2(6.443546, 6.443546)
 shape = SubResource("RectangleShape2D_5v6r0")
@@ -215,29 +216,34 @@ text = "Streak: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Game Over Box" type="VBoxContainer" parent="." unique_id=913896719]
-visible = false
-custom_maximum_size = Vector2(40, 40)
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=646993981]
+custom_minimum_size = Vector2(512, 512)
 layout_mode = 0
 offset_left = 347.00003
-offset_top = 46.0
-offset_right = 443.00003
-offset_bottom = 105.0
-scale = Vector2(12.619225, 12.619225)
+offset_top = 119.68879
+offset_right = 859.0
+offset_bottom = 631.6888
 
-[node name="Game Over Label" type="Label" parent="Game Over Box" unique_id=1098913626]
-custom_maximum_size = Vector2(40, -1)
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=2116351323]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 1, 1)
-theme_override_font_sizes/font_size = 7
+color = Color(0.3882353, 0.2784314, 0.13725491, 1)
+
+[node name="Game Over Box" type="VBoxContainer" parent="MarginContainer" unique_id=913896719]
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 2
+
+[node name="Game Over Label" type="Label" parent="MarginContainer/Game Over Box" unique_id=1098913626]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7254902, 0, 1)
+theme_override_font_sizes/font_size = 80
 text = "Game Over"
 horizontal_alignment = 1
 
-[node name="Score Display" type="Label" parent="Game Over Box" unique_id=754789808]
+[node name="Score Display" type="Label" parent="MarginContainer/Game Over Box" unique_id=754789808]
 layout_mode = 2
-theme_override_font_sizes/font_size = 4
+theme_override_font_sizes/font_size = 70
 text = "Your Score is:
-23"
+0"
 horizontal_alignment = 1
 
 [connection signal="body_entered" from="Tower/Tower2" to="Tower" method="_on_tower_2_body_entered"]

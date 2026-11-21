@@ -5,7 +5,7 @@ extends Node
 @onready var textBox: RichTextLabel = $Textbox
 @onready var streakBox: Label = $Streak
 @onready var gameOverBox: VBoxContainer = $"Game Over Box"
-
+const popUpTexture = preload("res://assets/Input Prompts Pixel - Kenny/Tiles/tile_0470.png")
 # The player needs to be able to type
 # enemy needs to exist and move
 # By keeping track of enemy location, tower texture region change
@@ -18,10 +18,21 @@ var session_saved := false
 func _ready() -> void:
 	player.streak_changed.connect(streak_change)
 	tower.destroyed.connect(end_session)
-
+	$"EnemySprite".enemyDeath.connect(deathPopUp)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+# Called when an enemy is killed and the key icon shows up
+func deathPopUp (death_position: Vector2) -> void:
+		var popUp: Sprite2D = Sprite2D.new()
+		popUp.global_position = death_position
+		popUp.texture = popUpTexture
+		popUp.scale = Vector2(3,3)
+		add_child(popUp)
+		var tween = create_tween()
+		tween.tween_property(popUp, "modulate:a", 0.0, 1.5)
+		tween.tween_callback(popUp.queue_free)
+		
 
 #func update_word_display() ->void:
 	#if target_word.is_empty():

@@ -216,6 +216,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=646993981]
+visible = false
 custom_minimum_size = Vector2(512, 512)
 layout_mode = 0
 offset_left = 347.00003

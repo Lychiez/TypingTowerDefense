@@ -1,6 +1,6 @@
 class_name Enemy
 extends Node2D
-
+signal enemyDeath(deathPos: Vector2i)
 # Export enemy stats
 @export var health = 100
 @export var damage = 10
@@ -46,6 +46,10 @@ func checkAcc(input: String) -> void:
 func destroy() -> void:
 	if health <= 0:
 		visible = false
+		print("+1 key")
+		PlayerData.keys += 1
+		enemyDeath.emit(global_position)
+		print("signal emitted!")
 	currWord = ""
 	set_process(false)
 

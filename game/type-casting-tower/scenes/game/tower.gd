@@ -25,6 +25,7 @@ func _get_health() -> int:
 
 func _decrement_health() -> void:
 	if health <= 0:
+		destroyed.emit()
 		return
 	health -= 1
 	_update_appearance()

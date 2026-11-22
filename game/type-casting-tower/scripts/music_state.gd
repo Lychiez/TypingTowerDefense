@@ -2,6 +2,7 @@ extends Node
 
 var volume: int = 50
 var shop_music_position: float = 0.0
+var main_menu_music: float = 0.0
 
 func _ready() -> void:
 	var bus_index := AudioServer.get_bus_index("Master")

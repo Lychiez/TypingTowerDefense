@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drhv20ltlvb65" path="res://scenes/menus/main_menu.gd" id="1_xqga4"]
 [ext_resource type="Texture2D" uid="uid://c3lgifyva7j86" path="res://assets/images/GrassLand_Background_Guide.png" id="2_ovrgc"]
+[ext_resource type="AudioStream" uid="uid://bv52v2fxv2xk3" path="res://assets/audio/Temp Audio (Tangerine).mp3" id="3_2o76q"]
 
 [node name="MainMenu" type="Control" unique_id=911543463]
 layout_mode = 3
@@ -73,3 +74,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 67)
 layout_mode = 2
 text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1405641249]
+stream = ExtResource("3_2o76q")
+volume_db = -45.689
